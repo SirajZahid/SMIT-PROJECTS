@@ -1,0 +1,214 @@
+# Assignment-4-part-string
+In [2]:
+# Function to count vowels in a string
+def count_vowels(input_string):
+    # Define the vowels
+    vowels = "aeiouAEIOU"
+    # Initialize count
+    count = 0
+    # Iterate through the string and count vowels
+    for char in input_string:
+        if char in vowels:
+            count += 1
+    return count
+
+# Taking input from the user
+input_string = input("Enter a string: ")
+
+# Counting the vowels
+vowel_count = count_vowels(input_string)
+
+# Displaying the result
+print(f"The number of vowels in the string is: {vowel_count}")
+Enter a string:  abdullah
+The number of vowels in the string is: 3
+Write a program that reads a string from keyboard and display:
+The number of uppercase letters in the string
+The number of lowercase letters in the string
+The number of digits in the string
+The number of whitespace characters in the string
+In [11]:
+def analyze_string(input_string):
+    uppercase_count = 0
+    lowercase_count = 0
+    digit_count = 0
+    whitespace_count = 0
+
+    for char in input_string:
+        if char.isupper():
+            uppercase_count += 1
+        elif char.islower():
+            lowercase_count += 1
+        elif char.isdigit():
+            digit_count += 1
+        elif char.isspace():
+            whitespace_count += 1
+
+    return uppercase_count, lowercase_count, digit_count, whitespace_count
+
+# Taking input from the user
+input_string = input("Enter a string: ")
+
+# Analyzing the string
+uppercase_count, lowercase_count, digit_count, whitespace_count = analyze_string(input_string)
+
+# Displaying the results
+print(f"The number of uppercase letters: {uppercase_count}")
+print(f"The number of lowercase letters: {lowercase_count}")
+print(f"The number of digits: {digit_count}")
+print(f"The number of whitespace characters: {whitespace_count}")
+
+    
+Enter a string:  QWERTY YUIOPppoiuy!@#$%34567
+The number of uppercase letters: 11
+The number of lowercase letters: 6
+The number of digits: 5
+The number of whitespace characters: 1
+Write a Python program that accepts a string from user. Your program should create and display a new string where the first and last characters have been exchanged.
+In [17]:
+def swap_first_last_characters(input_string):
+    # Check if the string has only one character or is empty
+    if len(input_string) <= 1:
+        return input_string
+    # Swap the first and last characters
+    return input_string[-1] + input_string[1:-1] + input_string[0]
+
+# Taking input from the user
+input_string = input("Enter a string: ")
+
+# Creating the new string with swapped characters
+swapped_string = swap_first_last_characters(input_string)
+
+# Displaying the result
+print("The new string is:", swapped_string)
+Enter a string:  qwertyuiop
+The new string is: pwertyuioq
+Write a Python program that accepts a string from user. Your program should create a new string in reverse of first string and display it. For example if the user enters the string 'EXAM' then new string would be 'MAXE'
+In [22]:
+def reverse_string(input_string):
+    # Reversing the string using slicing
+    reversed_string = input_string[::-1]
+    return reversed_string
+
+# Taking input from the user
+input_string = input("Enter a string: ")
+
+# Creating the reversed string
+reversed_string = reverse_string(input_string)
+
+# Displaying the result
+print("The reversed string is:", reversed_string)
+Enter a string:  EXAM
+The reversed string is: MAXE
+Write a Python program that accepts a string from user. Your program should create a new string by shifting one position to left. For example if the user enters the string 'examination 2021' then new string would be 'xamination 2021e'
+In [25]:
+def shift_left(input_string):
+    # Check if the string is empty or has only one character
+    if len(input_string) <= 1:
+        return input_string
+    # Shift the string one position to the left
+    shifted_string = input_string[1:] + input_string[0]
+    return shifted_string
+
+# Taking input from the user
+input_string = input("Enter a string: ")
+
+# Creating the shifted string
+shifted_string = shift_left(input_string)
+
+# Displaying the result
+print("The new string is:", shifted_string)
+Enter a string:  EXAM 2024
+The new string is: XAM 2024E
+Write a program that asks the user to input his name and print its initials. Assuming that the user always types first name, middle name and last name and does not include any unnecessary spaces. For example, if the user enters Ajay Kumar Garg the program should display A. K. G. Note:Don't use split() method
+In [28]:
+def get_initials(full_name):
+    initials = ""
+    should_add = True  # Flag to determine if the current character is the start of a new name part
+
+    for char in full_name:
+        if should_add:
+            initials += char.upper() + ". "
+            should_add = False  # Reset the flag as we only add the initial once per name part
+        if char == " ":
+            should_add = True  # Set the flag if a space is encountered, meaning the next character is a new name part
+
+    return initials.strip()
+
+# Ask the user for their full name
+full_name = input("Enter your full name: ")
+print(get_initials(full_name))
+Enter your full name:  Ali Raza
+A. R.
+A palindrome is a string that reads the same backward as forward. For example, the words dad, madam and radar are all palindromes. Write a programs that determines whether the string is a palindrome. Note: do not use reverse() method
+In [37]:
+def is_palindrome(s):
+    # Remove any non-alphanumeric characters and convert to lowercase
+    clean_s = ''.join(char.lower() for char in s if char.isalnum())
+    length = len(clean_s)
+
+    for i in range(length // 2):
+        if clean_s[i] != clean_s[length - 1 - i]:
+            return False
+    return True
+
+# Ask the user for a string
+user_input = input("Enter a string to check if it's a palindrome: ")
+
+# Check and print whether the string is a palindrome
+if is_palindrome(user_input):
+    print("The string is a palindrome.")
+else:
+    print("The string is not a palindrome.")
+Enter a string to check if it's a palindrome:  212.22
+The string is not a palindrome.
+Write a program that display following output: SHIFT HIFTS IFTSH FTSHI TSHIF SHIFT
+In [40]:
+def rotate_string(s, n):
+    return s[n:] + s[:n]
+
+word = "SHIFT"
+for i in range(len(word)):
+    print(rotate_string(word, i))
+SHIFT
+HIFTS
+IFTSH
+FTSHI
+TSHIF
+Write a program in python that accepts a string to setup a passwords. Your entered password must meet the following requirements:
+The password must be at least eight characters long. It must contain at least one uppercase letter. It must contain at least one lowercase letter. It must contain at least one numeric digit. Your program should should perform this validation.
+
+In [53]:
+def is_valid_password(password):
+    if len(password) < 8:
+        return False, "Password must be at least 8 characters long."
+
+    has_upper = False
+    has_lower = False
+    has_digit = False
+
+    for char in password:
+        if char.isupper():
+            has_upper = True
+        elif char.islower():
+            has_lower = True
+        elif char.isdigit():
+            has_digit = True
+
+    if not has_upper:
+        return False, "Password must contain at least one uppercase letter."
+    if not has_lower:
+        return False, "Password must contain at least one lowercase letter."
+    if not has_digit:
+        return False, "Password must contain at least one numeric digit."
+
+    
+    return True, "Password is valid."
+
+# Ask the user for a password
+password = input("Enter a password: ")
+is_valid, message = is_valid_password(password)
+print(message)
+Enter a password:  Qwe!@234
+Password is valid.
+In [ ]:
