@@ -1,0 +1,323 @@
+# Assignment-4-part-conditional-
+1. Write a program that prompts the user to input a number and display if the number is even or odd.
+In [57]:
+num = int(input("enter any number"))
+if num % 2 == 0:
+    print(f"{num} is even.")
+else:
+    print(f"{num} is odd.")
+enter any number 4
+4 is even.
+2. Write a Python program that takes an age as input and determines whether a person is eligible to vote. If the age is 18 or above, print "You are eligible to vote." Otherwise, print "You are not eligible to vote yet.".
+In [20]:
+age = int(input("Enter your age"))
+if age>= 18:
+    print("You are eligible for vote.")
+else:
+    print("You are not eligible for vote.")
+Enter your age 18
+You are eligible for vote.
+3. Write a program that prompts the user to input two integers and outputs the largest.
+In [59]:
+num1=int(input("Enter any number"))
+num2=int(input("Enter any number"))
+if num1>num2:
+    print (f"largest number is {num1}")
+elif num1<num2:
+    print(f"Largest number is {num2}")
+else:
+    print("Both are equal")
+Enter any number 16
+Enter any number 14
+largest number is 16
+4. Write a program that prompts the user to enter a number and determines whether it is positive, negative, or zero. The program should print "Positive" if the number is greater than 0, "Negative" if the number is less than 0, and "Zero" if the number is 0.
+In [63]:
+number =int(input("Enter any number"))
+if number>0:
+    print (f"{number} is positive")
+elif number<0:
+    print(f"{number} is negative")
+else:
+    print (f"{number} is zero")
+    
+Enter any number -4
+-4 is negative
+5.
+Write a program that prompts the user to enter their age and prints the
+
+corresponding age group. The program should use the following age groups:
+
+0-12: Child
+
+13-19: Teenager
+
+20-59: Adult
+
+60 and above: Senior Citizen
+
+In [65]:
+age=int(input("Enter your age"))
+if age >=0 and age<=12:
+    print("age group = Child")
+elif age>=13 and age<=19:
+    print ("age group = Teenager")
+elif age>=20 and age<=59:
+    print ("age group = Adult ")
+else:
+    print("age group = Senior Citizen")
+Enter your age 40
+age group = Adult 
+6.
+Write a program that prompts the user to input a number from 1 to 7. The program should display the corresponding day for the given number. For example, if the user types 1, the output should be Sunday. If the user types 7, the output should be Saturday. If the number is not between 1 to 7 user should get error message as shown in sample output.
+
+In [82]:
+num=int(input("Enter any Number :"))
+if num==1:
+    print("sunday")
+elif num==2:
+    print("Monday")
+elif num==3:
+    print("Tuesday")
+elif num==4:
+    print("Wednesday")
+elif num==5:
+    print("Thursday")
+elif num==6:
+    print("Friday")
+elif num==7:
+    print("Saturday")    
+else:
+    print ("Error : enter number b/w 1-7")
+Enter any Number : 7
+Saturday
+7.
+Write a program that prompts the user to enter their weight (in kilograms) and height
+
+(in meters). The program should calculate the Body Mass Index (BMI) using the formula:
+
+BMI = weight / (height * height). The program should then classify the BMI into one of
+
+the following categories:
+
+less than 18.5 - Underweight
+
+BMI between 18.5 and 24.9 - Normal weight
+
+BMI between 25 and 29.9 - Overweight
+
+BMI 30 or greater - Obesity
+
+In [122]:
+# Taking inputs from the user
+weight = float(input("Enter your weight in kilograms: "))
+height = float(input("Enter your height in meters: "))
+
+# Calculating BMI
+bmi = weight / (height ** 2)
+
+# Classifying BMI
+if bmi < 18.5:
+    category = "Underweight"
+elif 18.5 <= bmi <= 24.9:
+    category = "Normal weight"
+elif 25 <= bmi <= 29.9:
+    category = "Overweight"
+else:
+    category = "Obesity"
+
+# Displaying the result
+print(f"Your BMI is: {bmi:.2f}")
+print(f"You are classified as: {category}")
+Enter your weight in kilograms:  433
+Enter your height in meters:  43343434
+Your BMI is: 0.00
+You are classified as: Underweight
+8.
+The marks obtained by a student in 3 different subjects are input by the user. Your program should calculate the average of subjects and display the grade. The student gets a grade as per the following rules: Average Grade 90-100 A 80-89 B 70-79 C
+
+60-69 D 0-59 F
+
+In [128]:
+#### Taking inputs from the user
+subject1 = float(input("Enter the marks for subject 1: "))
+subject2 = float(input("Enter the marks for subject 2: "))
+subject3 = float(input("Enter the marks for subject 3: "))
+
+# Calculating the average of the marks
+average = (subject1 + subject2 + subject3) / 3
+
+# Determining the grade based on the average
+if 90 <= average <= 100:
+    grade = "A"
+elif 80 <= average < 90:
+    grade = "B"
+elif 70 <= average < 80:
+    grade = "C"
+elif 60 <= average < 70:
+    grade = "D"
+else:
+    grade = "F"
+
+# Displaying the result
+print(f"The average mark is: {average:.2f}")
+print(f"The grade is: {grade}")
+Enter the marks for subject 1:  43
+Enter the marks for subject 2:  34
+Enter the marks for subject 3:  34
+The average mark is: 37.00
+The grade is: F
+9. The roots of the quadratic equation ax2
+bx + c = 0, a ≠ 0 are given by the following
+formula:
+
+In this formula, the term b2
+
+4ac is called the discriminant. If b2
+
+4ac = 0, then the
+
+equation has two equal roots. If b2
+
+4ac > 0, the equation has two real roots. If b2
+
+4ac < 0, the equation has two
+
+complex roots. Write a program that prompts the user to input the value of a (the coefficient of x2 ), b (the coefficient of x), and c (the constant term) and outputs the roots of the quadratic equation.
+
+In [135]:
+import math
+
+# Taking inputs from the user
+a = float(input("Enter the coefficient a: "))
+b = float(input("Enter the coefficient b: "))
+c = float(input("Enter the constant term c: "))
+
+# Calculating the discriminant
+discriminant = b**2 - 4*a*c
+
+# Checking the nature of the roots
+if discriminant > 0:
+    # Two real and distinct roots
+    root1 = (-b + math.sqrt(discriminant)) / (2*a)
+    root2 = (-b - math.sqrt(discriminant)) / (2*a)
+    print(f"The roots are real and distinct: {root1} and {root2}")
+elif discriminant == 0:
+    # One real root (repeated)
+    root = -b / (2*a)
+    print(f"The root is real and repeated: {root}")
+else:
+    # Complex roots
+    real_part = -b / (2*a)
+    imaginary_part = math.sqrt(-discriminant) / (2*a)
+    print(f"The roots are complex: {real_part} + {imaginary_part}i and {real_part} - {imaginary_part}i")
+Enter the coefficient a:  232
+Enter the coefficient b:  233
+Enter the constant term c:  2323
+The roots are complex: -0.5021551724137931 + 3.1242232982456346i and -0.5021551724137931 - 3.1242232982456346i
+10. Write a program that prompts the user to enter three numbers and sorts them in
+ascending order. The program should print the sorted numbers.
+
+In [138]:
+# Taking inputs from the user
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+num3 = float(input("Enter the third number: "))
+
+# Creating a list of the numbers
+numbers = [num1, num2, num3]
+
+# Sorting the list in ascending order
+numbers.sort()
+
+# Printing the sorted numbers
+print("The numbers in ascending order are:", numbers)
+Enter the first number:  43
+Enter the second number:  43
+Enter the third number:  34
+The numbers in ascending order are: [34.0, 43.0, 43.0]
+11. Write a program that prompts the user to input three integers and outputs the
+largest.
+
+In [141]:
+# Taking inputs from the user
+num1 = int(input("Enter the first integer: "))
+num2 = int(input("Enter the second integer: "))
+num3 = int(input("Enter the third integer: "))
+
+# Determining the largest number
+if num1 >= num2 and num1 >= num3:
+    largest = num1
+elif num2 >= num1 and num2 >= num3:
+    largest = num2
+else:
+    largest = num3
+
+# Displaying the result
+print(f"The largest number is: {largest}")
+Enter the first integer:  54
+Enter the second integer:  54
+Enter the third integer:  34
+The largest number is: 54
+12. Write a program that prompts the user to input a character and determine the
+character is vowel or consonant.
+
+In [150]:
+# Taking input from the user
+char = input("Enter a character: ")
+
+# Checking if the input is a single alphabet character
+if len(char) == 1 and char.isalpha():
+    # Determining if the character is a vowel or consonant
+    if char.lower() in 'aeiou':
+        print(f"The character '{char}' is a vowel.")
+    else:
+        print(f"The character '{char}' is a consonant.")
+else:
+    print("Please enter a single alphabet character.")
+Enter a character:  3
+Please enter a single alphabet character.
+13. Write a program that prompts the user to input a year and determine whether the
+year is a leap year or not. Leap Years are any year that can be evenly divided by 4. A year that is evenly divisible by 100 is a leap year only if it is also evenly divisible by 400. Example: 1992 Leap Year 2000 Leap Year 1900 NOT a Leap Year 1995 NOT a Leap Year
+
+In [159]:
+## Taking input from the user
+year = int(input("Enter a year: "))
+
+# Determining if the year is a leap year
+if (year % 4 == 0):
+    if (year % 100 == 0):
+        if (year % 400 == 0):
+            print(f"{year} is a Leap Year")
+        else:
+            print(f"{year} is NOT a Leap Year")
+    else:
+        print(f"{year} is a Leap Year")
+else:
+    print(f"{year} is NOT a Leap Year")
+Enter a year:  2025
+2025 is NOT a Leap Year
+14. Write a program that prompts the user to input number of calls and calculate the
+monthly telephone bills as per the following rule: Minimum Rs. 200 for up to 100 calls. Plus Rs. 0.60 per call for next 50 calls. Plus Rs. 0.50 per call for next 50 calls. Plus Rs. 0.40 per call for any call beyond 200 calls.
+
+In [162]:
+# Taking input from the user
+number_of_calls = int(input("Enter the number of calls: "))
+
+# Initializing the bill amount
+bill = 200
+
+# Calculating the bill based on the number of calls
+if number_of_calls <= 100:
+    bill = 200
+elif number_of_calls <= 150:
+    bill = 200 + (number_of_calls - 100) * 0.60
+elif number_of_calls <= 200:
+    bill = 200 + 50 * 0.60 + (number_of_calls - 150) * 0.50
+else:
+    bill = 200 + 50 * 0.60 + 50 * 0.50 + (number_of_calls - 200) * 0.40
+
+# Displaying the result
+print(f"The monthly telephone bill is: Rs. {bill:.2f}")
+Enter the number of calls:  2
+The monthly telephone bill is: Rs. 200.00
+In [ ]:
