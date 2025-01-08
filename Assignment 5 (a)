@@ -1,0 +1,181 @@
+1. Write a Python function to find the maximum of three numbers.
+In [30]:
+def find_max(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+print(find_max(10, 20, 15))
+20
+2. Write a Python function to sum all the numbers in a list.
+    Sample List : (8, 2, 3, 0, 7)
+    Expected Output : 20
+In [3]:
+def sum_of_list(numbers):
+    return sum(numbers)
+sample_list = [8, 2, 3, 0, 7]
+print(sum_of_list(sample_list))  
+20
+3. Write a Python function to multiply all the numbers in a list.
+    Sample List : (8, 2, 3, -1, 7)
+    Expected Output : -336
+In [ ]:
+def multiply_of_list(numbers):
+    result = 1
+    for num in numbers:
+        result *= num
+    return result
+
+sample_list = [8, 2, 3, -1, 7]
+print(multiply_of_list(sample_list)) 
+4. Write a Python program to reverse a string.
+    Sample String : "1234abcd"
+    Expected Output : "dcba4321"
+In [ ]:
+def reverse_string(s):
+    return s[::-1]
+sample_string = "1234abcd"
+print(reverse_string(sample_string)) 
+5. Write a Python function to calculate the factorial of a number (a non-negative integer). The function accepts the number as an argument.
+In [ ]:
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+number = 5
+print(factorial(number))
+6. Write a Python function to check whether a number falls within a given range.
+In [ ]:
+def is_within_range(number, start, end):
+    return start <= number <= end
+
+# for example
+number = 5
+start = 1
+end = 10
+print(is_within_range(number, start, end))
+
+# Example with number outside the range
+number = 15
+print(is_within_range(number, start, end)) 
+7. Write a Python function that accepts a string and counts the number of upper and lower case letters.
+Sample String : 'The quick Brow Fox'
+Expected Output :
+No. of Upper case characters : 3
+No. of Lower case Characters : 12
+In [ ]:
+def count_case_letters(s):
+    upper_count = 0
+    lower_count = 0
+    for char in s:
+        if char.isupper():
+            upper_count += 1
+        elif char.islower():
+            lower_count += 1
+    return upper_count, lower_count
+sample_string = "The quick Brow Fox"
+upper, lower = count_case_letters(sample_string)
+print(f"No. of Upper case characters: {upper}")  
+print(f"No. of Lower case characters: {lower}")  
+8. Write a Python function that takes a list and returns a new list with distinct
+    elements from the first list.
+    Sample List : [1,2,3,3,3,3,4,5]
+    Unique List : [1, 2, 3, 4, 5]
+In [ ]:
+def get_unique_elements(input_list):
+    return list(set(input_list))
+sample_list = [1, 2, 3, 3, 3, 3, 4, 5]
+unique_list = get_unique_elements(sample_list)
+print("Unique List:", unique_list)  
+9. Write a Python function that takes a number as a parameter and checks whether the number is prime or not.
+Note : A prime number (or a prime) is a natural number greater than 1 and that
+has no positive divisors other than 1 and itself.
+In [ ]:
+def is_prime(number):
+    if number <= 1:
+        return False
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0:
+            return False
+    return True
+num = 11
+print(is_prime(num)) 
+
+num = 15
+print(is_prime(num)) 
+10. Write a Python program to print the even numbers from a given list.
+    Sample List : [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    Expected Result : [2, 4, 6, 8]
+In [ ]:
+# Sample list
+sample_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Filter even numbers
+even_numbers = [num for num in sample_list if num % 2 == 0]
+
+# Print the result
+print(even_numbers)
+11. Write a Python function to check whether a number is "Perfect" or not.According to Wikipedia : In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself (also known as its aliquot sum).Equivalently, a perfect number is a number that is half the sum of all of its positive divisors (including itself).
+Example : The first perfect number is 6, because 1, 2, and 3 are its proper positive
+divisors, and 1 + 2 + 3 = 6. Equivalently, the number 6 is equal to half the sum of
+all its positive divisors: ( 1 + 2 + 3 + 6 ) / 2 = 6. The next perfect number is 28 = 1 +
+2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128.
+In [ ]:
+def is_perfect_number(n):
+    """
+    Check if a number is a perfect number.
+    
+    A perfect number is a positive integer that is equal to the sum of its proper divisors
+    (excluding itself).
+    
+    Parameters:
+    n (int): The number to check.
+    
+    Returns:
+    bool: True if n is a perfect number, False otherwise.
+    """
+    if n < 2:
+        return False  # No perfect numbers less than 2
+
+    # Find all proper divisors of n
+    proper_divisors = [i for i in range(1, n // 2 + 1) if n % i == 0]
+    
+    # Check if the sum of the divisors equals the number
+    return sum(proper_divisors) == n
+
+# Test the function
+test_numbers = [6, 28, 496, 8128, 12, 97]
+for num in test_numbers:
+    print(f"{num} is a perfect number: {is_perfect_number(num)}")
+12. Write a Python function that checks whether a passed string is a palindrome or not.
+    Note: A palindrome is a word, phrase, or sequence that reads the same backward
+    as forward, e.g., madam or nurses run.
+In [ ]:
+def is_palindrome(s):
+    """
+    Check if a given string is a palindrome.
+    
+    A palindrome is a word, phrase, or sequence that reads the same backward as forward.
+    
+    Parameters:
+    s (str): The string to check.
+    
+    Returns:
+    bool: True if the string is a palindrome, False otherwise.
+    """
+    # Remove non-alphanumeric characters and convert to lowercase
+    cleaned = ''.join(char.lower() for char in s if char.isalnum())
+    
+    # Check if the cleaned string is equal to its reverse
+    return cleaned == cleaned[::-1]
+
+# Test the function
+test_strings = ["madam", "nurses run", "racecar", "hello", "A man, a plan, a canal, Panama"]
+for string in test_strings:
+    print(f"'{string}' is a palindrome: {is_palindrome(string)}")
+In [ ]:
