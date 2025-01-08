@@ -1,0 +1,192 @@
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,190 @@
+# Assignment-2
+Area of a Rectangle
+In [6]:
+length = eval(input("Enter Length of Rectangle"))
+width = eval(input("Enter Width of Rectangle"))
+Enter Length of Rectangle 10
+Enter Width of Rectangle 10
+In [8]:
+Area = length*width
+print(Area)
+100
+Circumference of a Circle/Perimeter of a Circle
+In [11]:
+r = eval(input("Enter radius of a Circle"))
+Enter radius of a Circle 12
+In [15]:
+Circumference = 2*(3.142)*r
+print(Circumference)
+75.408
+Simple Interest
+In [18]:
+rate = eval(input("Enter Rate"))
+principal = eval(input("Enter Principal"))
+time = eval(input("Enter Time"))
+Enter Rate 1
+Enter Principal 2
+Enter Time 3
+In [20]:
+Simple_interest = rate*principal*time
+print(Simple_interest)
+6
+Speed of An Object
+In [23]:
+distance = eval(input("Enter Distance"))
+time_1 = eval(input("Enter Time"))
+Enter Distance 21
+Enter Time 21
+In [25]:
+Speed = distance/time_1
+print(Speed)
+1.0
+BMI Calculator
+In [28]:
+Weight = eval(input("Enter Weight in kg"))
+Height = eval(input("Enter Height in meter"))
+Enter Weight in kg 213
+Enter Height in meter 12
+In [32]:
+BMI = Weight/(Height)**2
+print(BMI)
+1.4791666666666667
+Force Using Newtons Second Law
+In [35]:
+acceleration = eval(input("Enter Acceleration in meter/second^2"))
+mass = eval(input("Enter Mass in kg"))
+Enter Acceleration in meter/second^2 21
+Enter Mass in kg 1
+In [37]:
+Force = mass*acceleration
+print(Force)
+21
+Compound Interest
+In [40]:
+P = eval(input("Enter Principal Amount"))
+r = eval(input("Enter Annual Interest Rate(decimal)"))
+n = eval(input("Enter number of times interest is compound per year"))
+t = eval(input("Enter time in years"))
+Enter Principal Amount 3
+Enter Annual Interest Rate(decimal) 2
+Enter number of times interest is compound per year 1
+Enter time in years 4
+In [44]:
+A = P*(1+r/n)**n-t
+print(A)
+5.0
+Perimeter of a Triangle
+In [47]:
+a = eval(input("Enter Length of triangle"))
+b = eval(input("Enter Width of triangle"))
+c = eval(input("Enter Height of triangle")) 
+Enter Length of triangle 2
+Enter Width of triangle 3
+Enter Height of triangle 2
+In [49]:
+Perimeter = a+b+c
+print(Perimeter)
+7
+Volume of a Sphere
+In [52]:
+r_1 = eval(input("Enter radius of a Sphere"))
+Enter radius of a Sphere 12
+In [54]:
+Volume = 4/3*(3.142)*r_1**3
+print(Volume)
+7239.168
+Kinetic Energy
+In [57]:
+mass_2 = eval(input("Enter Mass in kg"))
+velocity = eval(input("Enter Velocity in m/s"))
+Enter Mass in kg 34
+Enter Velocity in m/s 10
+In [59]:
+Kinetic_Energy = 1/2*mass_2*velocity**2
+print(Kinetic_Energy)
+1700.0
+Temperature Conversion
+In [63]:
+temp = eval(input("Enter Temperature in Celcius")) 
+Enter Temperature in Celcius 45
+In [65]:
+Farenheit = 9/5*temp+32
+print(Farenheit)
+113.0
+Gravitational Force
+In [68]:
+m1 = eval(input("Enter mass_1 in kg"))
+m2 = eval(input("Enter mass_2 in kg"))
+dis = m1 = eval(input("Enter Distance between objects"))
+Enter mass_1 in kg 20
+Enter mass_2 in kg 10
+Enter Distance between objects 5
+In [70]:
+F = (6.6743*10**-11)*(m1*m2)/dis**2
+print(F)
+1.33486e-10
+Volume of a Cylinder
+In [73]:
+r_3 = eval(input("Enter radius of a Cylinder"))
+h = eval(input("Enter height of a Cylinder"))
+Enter radius of a Cylinder 10
+Enter height of a Cylinder 15
+In [75]:
+vol = (3.142)*(r_3**2)*h
+print(vol)
+4713.0
+Pressure
+In [78]:
+f = eval(input("Enter Force"))
+area = eval(input("Enter Area"))
+Enter Force 50
+Enter Area 10
+In [80]:
+Pressure = f/area
+print(Pressure)
+5.0
+Electric Power
+In [83]:
+voltage = eval(input("Enter Voltage"))
+current = eval(input("Enter Current"))
+Enter Voltage 100
+Enter Current 10
+In [85]:
+Power = voltage/current
+print(Power)
+10.0
+Future Value of Savings
+In [90]:
+PV = eval(input("Enter Present Value"))
+t_2 = eval(input("Enter time in years"))
+r_4 = eval(input("Enter Annual Interest Rate(decimal)"))
+Enter Present Value 10000
+Enter time in years 2
+Enter Annual Interest Rate(decimal) 200
+In [98]:
+FV = PV*(1+r_4)**t_2
+print(FV)
+404010000
+Work Done
+In [101]:
+f_2 =  eval(input("Enter Force"))
+dis_2 =  eval(input("Enter Distance"))
+Enter Force 200
+Enter Distance 20
+In [105]:
+W = f_2*dis_2
+print(W)
+4000
+Heat Transfer
+In [108]:
+m = eval(input("Enter mass"))
+c= eval(input("Enter Specific Heat Capacity"))
+tem = eval(input("Enter change in temperature"))
+Enter mass 20
+Enter Specific Heat Capacity 100
+Enter temperature 60
+In [110]:
+Q = m*c*tem
+print(Q)
+120000
+In [ ]:
