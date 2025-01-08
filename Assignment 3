@@ -1,0 +1,419 @@
+n [1]:
+total = int(input('enter total price you are shopping'))
+if total>100:
+    discount = total*0.10
+    print(f"the total is {total-discount}")
+elif total<100:
+    print(total)
+enter total price you are shopping 200
+the total is 180.0
+In [2]:
+items=int(input('enter total nummber of items'))
+amount = int(input('enter the price of item'))  
+if items>5:
+    discount = amount*0.15
+    print(f'the total price is {amount-discount}')
+else:
+    print(amount)
+enter total nummber of items 6
+enter the price of item 8
+the total price is 6.8
+In [3]:
+is_member = input('you are a member answer Y/N:').lower()
+product = 20000
+
+if is_member == 'y':
+    discount = product * 0.20
+    print(f"the total is {product-discount}")
+elif is_member =='n':
+    discount2 = product * 0.5
+    print(f"the total price is {product-discount2}")
+else:
+    print("Invalid input. please enter y or no")
+you are a member answer Y/N: y
+the total is 16000.0
+In [4]:
+is_member = input('You are a member? Answer Y/N: ').lower()
+product = int(input('enter your shoppig amount'))
+
+if is_member == 'y':
+    discount = product * 0.20
+    print(f"The total price is {product - discount}")
+elif is_member == 'n':
+    discount2 = product * 0.5
+    print(f"The total price is {product - discount2}")
+else:
+    print("Invalid input. Please enter Y or N.")
+You are a member? Answer Y/N:  y
+enter your shoppig amount 200
+The total price is 160.0
+In [6]:
+lst = ["monday", "tuesday" , "wednesday", "thusday" , "friday", 'holiday':{'saturday','sunday'}]
+student = input("Enter the name of day")
+price = int(input('enter the price'))
+if student == list[5]['holiday']:
+    discount = price*0.25
+    print(f'the total price is{price-discount}')
+elif student != list[5]['holiday']:
+    discount = price*0.10
+    print(f'the total price is{price-discount}')
+  Cell In[6], line 1
+    lst = ["monday", "tuesday" , "wednesday", "thusday" , "friday", 'holiday':{'saturday','sunday'}]
+                                                                             ^
+SyntaxError: invalid syntax
+In [8]:
+# List of weekdays and dictionary for holidays
+lst = ["monday", "tuesday", "wednesday", "thursday", "friday"]
+holidays = {'saturday','sunday'}
+
+# User input
+student = input("Enter the name of the day: ").lower()  # Convert input to lowercase for consistency
+price = int(input('Enter the price: '))
+
+# Check if the entered day is a holiday
+if student in holidays:
+    discount = price * 0.25
+    print(f"The total price is {price - discount}")
+else:
+    discount = price * 0.10
+    print(f"The total price is {price - discount}")
+Enter the name of the day:  monday
+Enter the price:  200
+The total price is 180.0
+In [10]:
+# Input: Price of the item
+price = float(input("Enter the price of the item: $"))
+
+# Tax calculation
+if price > 500:
+    tax = price * 0.15  # Luxury tax of 15%
+    total_price = price - tax
+    print(f"Luxury tax applied (15%). Total price: ${total_price:.2f}")
+else:
+    tax = price * 0.08  # Standard tax of 8%
+    total_price = price - tax
+    print(f"Standard tax applied (8%). Total price: ${total_price:.2f}")
+
+    
+Enter the price of the item: $ 200
+Standard tax applied (8%). Total price: $184.00
+In [12]:
+def calculate_total():
+    # Dictionary of products and their prices
+    products = {
+        "mobile": 300,
+        "cable": 20,
+        "fridge": 600,
+        "laptop": 800,
+        "headphones": 50,
+        "watch": 150
+    }
+
+    # Display the available products and their prices
+    print("Available products:")
+    for product, price in products.items():
+        print(f"{product.capitalize()} - ${price}")
+
+    # Initialize total price
+    total_price = 0
+
+    # Loop to ask for user input on which products to buy
+    while True:
+        product_name = input("Enter the product you want to buy (or 'done' to finish): ").lower()
+        
+        # Exit the loop if the user types 'done'
+        if product_name == 'done':
+            break
+        
+        # Check if the product is in the available list
+        if product_name in products:
+            total_price += products[product_name]
+            print(f"{product_name.capitalize()} added to cart. Price: ${products[product_name]}")
+        else:
+            print(f"Sorry, {product_name} is not available.")
+    
+    # Display the total price before discount
+    print(f"\nTotal price before discount: ${total_price}")
+    
+    # Apply discount based on the total price
+    if total_price > 500:
+        discount = total_price * 0.15  # 15% discount
+        total_price_after_discount = total_price - discount
+        print(f"Luxury discount applied (15%). Discount: ${discount:.2f}")
+    else:
+        discount = total_price * 0.08  # 8% discount
+        total_price_after_discount = total_price - discount
+        print(f"Standard discount applied (8%). Discount: ${discount:.2f}")
+    
+    # Show the final total price after discount
+    print(f"Total price after discount: ${total_price_after_discount:.2f}")
+
+
+# Call the function to run the program
+calculate_total()
+Available products:
+Mobile - $300
+Cable - $20
+Fridge - $600
+Laptop - $800
+Headphones - $50
+Watch - $150
+Enter the product you want to buy (or 'done' to finish):  mobile
+Mobile added to cart. Price: $300
+Enter the product you want to buy (or 'done' to finish):  done
+
+Total price before discount: $300
+Standard discount applied (8%). Discount: $24.00
+Total price after discount: $276.00
+If a person's annual income is above $50,000, they pay 20% tax. Otherwise, they pay 10%. Calculate and display the tax amount.
+In [41]:
+income = int(input('enter your monthly income'))
+if income>50000:
+    tax = income*0.20
+    print(f'the total income is {tax-income}')
+    print(f'the total tax is { tax}')
+elif income<50000:
+     tax1 = income*0.10
+     print(f'the total income is {tax1-income}')
+     print(f'the total tax is { tax1}')
+enter your monthly income 40000
+the total income is -36000.0
+the total tax is 4000.0
+Write a program to categorize a person into tax brackets:
+Income < $30,000: "Low Tax"
+30,000≤Income<100,000: "Medium Tax"
+Income ≥ $100,000: "High Tax"
+In [48]:
+incomes = int(input('enter your monthly income'))
+if incomes<30000:
+    taxes = incomes*0.10
+    print(f'your monthly income is {incomes - taxes}')
+    print(f'your total tax is {taxes}')
+elif incomes<100000:
+    taxes1 = incomes*0.20
+    print(f'your monthly income is {incomes - taxes1}')
+    print(f'your total tax is {taxes1}')
+elif incomes>100000:
+    taxes2 = incomes*0.30
+    print(f'your monthly income is {incomes - taxes2}')
+    print(f'your total tax is {taxes2}')    
+enter your monthly income 130000
+your monthly income is 91000.0
+your total tax is 39000.0
+VAT Calculation
+If the item is marked as essential (is_essential = True), apply a VAT of 5%. Otherwise, apply a VAT of 12%. Display the final price.
+Tax-Free Day
+If today is a tax-free day (tax_free = True), display the original price. Otherwise, add a 7% tax.
+In [68]:
+shop = int(input('enter your salary'))
+tax_free = input('today is tax free day answer (y/n)').lower()
+if tax_free=='y':
+    print(f'your total shopping amount is {shop}')
+elif tax_free=='n':
+    Tax = int(shop*0.07)
+    print(f'your salary amount after tax {int(shop-Tax)}')
+    print(f'your total tax is {Tax}')
+enter your salary 70000
+today is tax free day answer (y/n) n
+your salary amount after tax 65100
+your total tax is 4900
+Shopping and Billing
+Free Shipping
+If the total purchase amount is more than 50 dollar offer free shipping; otherwise, charge 5 dollar for shipping. Display the total amount including shipping.
+In [80]:
+purchases = int(input('enter the total price you shopping'))
+if purchases>50:
+    print(f'your total shopping price is {purchases}')
+elif purchases<50:
+    shipping = purchases+5
+    print(f'your shopping price is {purchases} and adding after shipping price your total amount is {shipping}')
+enter the total price you shopping 60
+your total shopping price is 60
+Discount Code
+If a customer enters the correct discount code (DISCOUNT10), apply a 10% discount. Otherwise, charge the full amount.
+In [88]:
+code_discount = int(input("Enter the amount"))
+customer = input("Enter the code")
+if customer == "discount10":
+    discount = code_discount*0.10
+    print(f"your total discount {code_discount-discount}")
+elif customer != "discount10":
+    print(f"your input incorect your total bill is {code_discount}")
+Enter the amount 200
+Enter the code ball
+your input incorect your total bill is 200
+Tiered Discounts
+Apply discounts based on the total price:` 0–50: No discount. 50–100: 10% discount. Over $100: 20% discount.
+
+In [112]:
+client = int(input("Enter the price"))
+if client<50:
+    print(f"NO discoun {client}")
+elif client>50 and client <100:   
+    discount = client*0.10
+    print(f"your total price is {discount-client}")
+elif client>100:
+    discount1 = client*0.20
+    print(f"your total over prices {discount1-client}")
+    
+Enter the price 110
+your total over prices -88.0
+If the total amount is less than 20,displayamessage:"Minimumpurchaseof20 is required." Otherwise, display the total amount.
+In [117]:
+amount = int(input("Enter the amount you want"))
+if amount<20:
+    print("sorry your amunt is less than 20")
+elif amount>20:
+    print(f"your total is {amount}")
+    
+Enter the amount you want 30
+your total is 30
+If a customer is a loyal member (is_loyal = True), they earn double loyalty points for their purchase. Otherwise, they earn standard points
+In [126]:
+is_loyal = int(input("Enter the loyality points"))
+loyal = is_loyal
+you_loyal = input('you are loyal answer y/n').lower()
+if you_loyal == 'y':
+    print(f'your points {is_loyal} and you are loyal so your points is double {is_loyal+loyal}')
+elif you_loyal == 'n':
+    print(f'your points {is_loyal} because you are not loyal you are loyal so your point is double')
+    
+Enter the loyality points 20
+you are loyal answer y/n n
+your points 20 because you are not loyal you are loyal so your point is double
+Travel Discount
+If a person is traveling more than 500 miles, offer a 20% discount on ticket price. Otherwise, charge the full amount.
+In [7]:
+ticket = int(input('enter the ticket price you traveling'))
+miles = int(input('enter the miles you travaling'))
+if miles>500:
+    discount = ticket*0.20
+    print(f'your ticket price is {ticket - discount} ')
+elif miles<500:
+    print(f'sorry you have no discount {ticket}')
+enter the ticket price you traveling 1000
+enter the miles you travaling 300
+sorry you have no discount 1000
+Child or Senior Discount
+If a passenger is under 12 or over 60 years old, apply a 15% discount on the ticket price. Otherwise, charge the full price.
+In [22]:
+age = int(input('enter your age'))
+ticket_price = int(input('enter the ticket price'))
+if age>60 or age<=12:
+    discount = ticket_price*0.15
+    print(f'your ticket price is {ticket_price - discount}')
+else:    
+    print(f'sorry you have no discount {ticket_price}')
+enter your age 40
+enter the ticket price 500
+sorry you have no discount 500
+Ticket Type Pricing
+If the ticket is for a weekend (is_weekend = True), add a 10% surcharge. Otherwise, charge the standard price.
+In [37]:
+week_end = ['saturday','sunday']
+week_day = ['monday','tuesday','wednesday','thursday','friday']
+day = input('enter the day')
+ticket = int(input('enter the ticket price'))
+if day in week_end:
+    discount = ticket*0.10
+    print(f'your ticket price with discount {ticket - discount}')
+elif day in week_day:
+    print(f'your ticket price without discount {ticket}')
+else:
+    print('sorry you enter invalid input only use samll alphaphet')
+enter the day Saturday
+enter the ticket price 300
+sorry you enter invalid input only use samll alphaphet
+Baggage Fee
+If the total baggage weight is over 20kg, charge $10 per extra kilogram. Otherwise, no extra fee
+In [ ]:
+If a ticket is booked more than 30 days in advance, apply a 10% discount. Otherwise, charge the full price.
+In [68]:
+booking_date_input = input("Ap ne kis date ko ticket book ki thi (format: YYYY-MM-DD): ")
+ticket_price = float(input("Ticket ki kitni keemat thi (in rupees): "))
+
+try:
+    booking_date = datetime.strptime(booking_date_input, '%Y-%m-%d')
+except ValueError:
+    print("Invalid date format. Please enter in YYYY-MM-DD format.")
+        
+      
+today_date = datetime.today()
+days_in_advance = (today_date - booking_date).days
+if days_in_advance > 30:
+    discounted_price = ticket_price * 0.90  # 10% discount
+    print(f"Ticket booked {days_in_advance} days in advance.")
+    print(f"Discount applied: 10%")
+    print(f"Final price after discount: {discounted_price} rupees")
+else:
+    print(f"Ticket booked {days_in_advance} days ago. No discount applied.")
+    print(f"Final price: {ticket_price} rupees")
+Ap ne kis date ko ticket book ki thi (format: YYYY-MM-DD):  2024-11-28
+Ticket ki kitni keemat thi (in rupees):  400
+Ticket booked 0 days ago. No discount applied.
+Final price: 400.0 rupees
+1Pass or Fail
+If a student scores 40 or more, print "Pass". Otherwise, print "Fail".
+In [84]:
+score_point = int(input("Enter the score point"))
+if score_point >40:
+    print("pass")
+elif score_point <40:
+    print("fail")
+else:
+    print(f"sorry invalid input {score_point}")
+Enter the score point 50
+pass
+Based on a student's score, assign grades:
+90 and above: "A"
+75–89: "B"
+50–74: "C"
+Below 50: "F
+In [107]:
+marks = int(input("Enter the marks:"))
+if marks>=90:
+    print("A")
+elif marks<89 and marks>74:
+    print("B")
+elif marks<74 and marks>50:
+    print("C")
+elif marks<=50:
+    print("F")
+else:
+    print(f"sorry this is invalid input {marks}")
+Enter the marks: 73
+C
+Bonus Marks
+If a student completes all assignments, add 5 bonus marks to their score. Otherwise, no bonus marks.
+In [132]:
+assigment = input("Enter the complete assigment Y/N:").lower()
+score = int(input("Enter the score "))
+if assigment == "y":
+    print(f"you are  complete assigment {score+5}")
+elif assigment == "n":
+    print(f"you are not complete assigment {score}")
+Enter the complete assigment Y/N: n
+Enter the score  40
+you are not complete assigment 40
+1If a student's attendance is 75% or more, they are eligible to take the exam. Otherwise, they are not.
+In [137]:
+student = int(input("Enter the correct attendance"))
+if student >75:
+    print("you are eligible for exam")
+elif student <75:
+    print("you are not eligible for exam")
+Enter the correct attendance 78
+you are eligible for exam
+If a student's grade is "A" and their annual family income is below $30,000, they are eligible for a scholarship. Otherwise, they are not
+In [152]:
+grade = input('enter your grade').lower()
+income = int(input('enter your annual family income'))
+if grade == 'a' and income>=30000:
+    print('you are eligible for scholarship')
+elif grade != 'a' and income<30000:
+    print('you are not eligable for scholarship')
+else:
+    print('your one criteria is completed but one is not ple')
+enter your grade a
+enter your annual family income 20000
+In [
